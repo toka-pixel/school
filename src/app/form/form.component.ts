@@ -26,21 +26,26 @@ export class FormComponent implements OnInit {
     multipleimages: new FormControl(''),
   });
 
+  insert=[];
   onSubmit() {
     
-    console.warn(this.profileForm.value);
+  
     this.title=this.profileForm.controls.title.value;
     this.description=this.profileForm.controls.description.value;
     this.mainimage=this.profileForm.controls.mainimage.value;
     // this.multipleimages=this.profileForm.controls.multipleimages.value;
+    this.insert.push({title : this.title ,description:this.description ,mainimage:this.mainimage} );
+ 
+    //  console.log(this.insert[0].title);
 
-    const formData = new FormData();
-  if (this.multipleimages.length > 0) {
-   for (const row of this.multipleimages) {
-     formData.append('document_files[]', row);
-     console.log(formData );
-   }
-  }
+
+  //   const formData = new FormData();
+  // if (this.multipleimages.length > 0) {
+  //  for (const row of this.multipleimages) {
+  //    formData.append('document_files[]', row);
+  //    console.log(formData );
+  //  }
+  // }
 
   // const formData = new FormData();
   // formData.append('file', this.profileForm.get('multipleimages').value);
@@ -55,6 +60,7 @@ export class FormComponent implements OnInit {
 url: any;
 onSelectFile(event) { // called each time file input changes
     if (event.target.files && event.target.files[0]) {
+
       var reader = new FileReader();
 
       reader.readAsDataURL(event.target.files[0]); // read file as data url
@@ -82,6 +88,13 @@ onFileChanged(event) {
   //   this.profileForm.get('multipleimages').setValue(file);
   // }
 }
-
-
+total:number=0
+pa=[]
+pushTotal(){
+this.pa.push(this.total)
+}
+current:number=0
+execute(num:number){
+this.current=num
+}
 }

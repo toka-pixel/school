@@ -1,5 +1,5 @@
 
-<div class="form" >
+ <div class="form" >
    <div class="login" >
        <h2>Information</h2>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" data-aos="fade-left">
@@ -23,28 +23,15 @@
             <input type="file" class="form-control" formControlName="multipleimages" (change)="onFileChanged($event)" multiple placeholder="multiple images">
         </div> -->
        
-        <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid" >Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid" (click)="total=total+1;pushTotal()" >Submit</button>
       </form>
    </div>
-</div>
+ </div>
 
 
 
 
-  <!-- paganation -->
-
-  <!-- <nav aria-label="Page navigation example">
-    <ul class="pagination">
-     
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-     
-    </ul>
-  </nav> -->
-
-
-  <div class="container second">
+ <div class="container second">
     <div class="row">
         <div class="col-sm-12 col-lg-6 col-xl-6">
             <div class="left">
@@ -52,9 +39,14 @@
             </div>
         </div>
         <div class="col-sm-12 col-lg-6 col-xl-6">
+
            <div class="right">
-            <h2>{{title}}</h2>
-            <p>{{description}}</p>
+            <ng-container *ngIf="insert.length !=0">
+
+            <h2 >{{insert[current].title}}</h2>
+            
+            <p>{{insert[current].description}}</p>
+          </ng-container>
                <div class="row">
                    <div class="col-sm-6" *ngFor="let image  of  multipleimages" >
                     <img [src]=image >
@@ -71,6 +63,21 @@
                </div> -->
            </div>
 
-        </div>
+       </div>
     </div>
-</div>
+
+ </div>   
+
+
+   <!-- paganation -->
+
+   <div class="text-center">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="#"> << </a></li>
+      <ng-container *ngIf="insert.length !=0">
+      <li class="page-item" *ngFor="let page of pa" (click)="execute(page)">{{page}}</li>
+    </ng-container>
+    <li class="page-item"><a class="page-link" href="#">>></a></li>
+    </ul>
+ </div>
+ 

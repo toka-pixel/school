@@ -131,9 +131,31 @@ label{
  }
 .right{
     text-align: center;
+    padding-top: 40px;
 }
 .right img{
     width: 210px;
     height: 140px;
     margin-top: 10px;
+}
+
+/* .pagination{
+    text-align: center;
+} */
+ul{
+    padding-top:30px;
+}
+li
+{
+    margin:0 2%;
+    color:black;
+    cursor:pointer;
+}
+.page-link {
+ 
+    padding: .4rem 0.75rem;
+ 
+    line-height: 1;
+    color: #007bff;
+
 }
