@@ -1,0 +1,76 @@
+
+<div class="form" >
+   <div class="login" >
+       <h2>Information</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" data-aos="fade-left">
+        <div class="form-group">
+          <label for="exampleInputEmail1">title</label>
+          <input type="text" class="form-control" formControlName="title"  aria-describedby="emailHelp" placeholder="">
+         
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">description</label>
+          <input type="text" class="form-control" formControlName="description" placeholder="">
+        </div>
+    
+        <div class="form-group">
+            <label for="exampleInputPassword1">Main image</label>
+            <input type="file" class="form-control" formControlName="mainimage"  (change)="onSelectFile($event)"  placeholder="Main image">
+        </div>
+    
+        <!-- <div class="form-group">
+            <label for="exampleInputPassword1">multiple images</label>
+            <input type="file" class="form-control" formControlName="multipleimages" (change)="onFileChanged($event)" multiple placeholder="multiple images">
+        </div> -->
+       
+        <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid" >Submit</button>
+      </form>
+   </div>
+</div>
+
+
+
+
+  <!-- paganation -->
+
+  <!-- <nav aria-label="Page navigation example">
+    <ul class="pagination">
+     
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+     
+    </ul>
+  </nav> -->
+
+
+  <div class="container second">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 col-xl-6">
+            <div class="left">
+                <img [src]="url">
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6 col-xl-6">
+           <div class="right">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+               <div class="row">
+                   <div class="col-sm-6" *ngFor="let image  of  multipleimages" >
+                    <img [src]=image >
+                   </div>
+                   <!-- <div class="col-sm-6" >
+                    <img src="/assets/lib2.jpg" >
+                </div>
+                <div class="col-sm-6"  >
+                    <img src="/assets/lib3.jpg">
+                </div>
+                <div class="col-sm-6" >
+                    <img src="/assets/lib4.jpg" >
+                </div>
+               </div> -->
+           </div>
+
+        </div>
+    </div>
+</div>

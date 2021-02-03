@@ -1,0 +1,72 @@
+/* first section  */
+
+html{
+    overflow-x: hidden;
+}
+.carousel .carousel-inner {
+    background: #333;
+}
+
+.carousel-caption {
+    top: 198px;
+}
+
+.carousel img {
+    height: 600px;
+    opacity: 0.7;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: wheat;
+    color: black;
+    height: 30px;
+    top: 300px;
+    width: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px
+}
+
+.carousel-caption h5 {
+    font-size: 60px;
+    padding-bottom: 15px;
+    font-weight: bolder;
+}
+.carousel-caption p{
+color: rgba(255,255,255,.9);
+}
+
+.carousel-caption .more,.contact{
+    font-family: Oswald, sans-serif;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 8px;
+    margin-left: 8px;
+    background-color: #e88f2a;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: 1px;
+    transition: background-color 300ms ease, color 300ms ease;
+    font-size: 12px;
+    padding:15px;
+    cursor: pointer;
+  
+  }
+
+  .carousel-caption a:hover{
+    text-decoration: none;
+    color:white
+  }
+
+  .contact{
+    background-color:#2b2825;
+    cursor: pointer;
+  }
+  .contact:hover{
+      background-color:#e88f2a;
+  }

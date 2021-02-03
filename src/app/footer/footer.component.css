@@ -1,0 +1,65 @@
+footer{
+    padding: 92px 0 0px;
+    /* background: #001a39; */
+    background-color: #1b1a19;
+}
+ .footer-box {
+    margin-bottom: 30px;
+}
+.footer-area-top h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+ .featured-links {
+    margin-bottom: 50px;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    color:white
+}
+
+.flickr-photos li{
+   
+    display: inline-block;
+    width: 32%;
+    margin-bottom: 0px;
+    margin-right: 4px;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: 58px;
+    transition: all 0.5s ease-in-out;
+}
+h3{
+    font-size: 20px;
+    margin-bottom: 30px;
+  
+    color: #ffc107;
+    font-weight: 900;
+}
+p{
+    color:white
+}
+a{
+    color:white;
+}
+a:hover{
+    color: #ffc107;
+}
+.featured-links > li ul li:before {
+    content: "\f105";
+    position: absolute;
+    left: 0;
+    font-family: FontAwesome;
+    color: #fdc800;
+    /* top: 0; */
+}
+.flickr-photos img:hover{
+    opacity: 0.8;
+}
