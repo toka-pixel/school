@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-sm-12 col-lg-6 col-xl-6">
             <div class="left">
-                <img [src]="url">
+                <img [src]='url'>
             </div>
         </div>
         <div class="col-sm-12 col-lg-6 col-xl-6">
@@ -43,14 +43,14 @@
            <div class="right">
             <ng-container *ngIf="insert.length !=0">
 
-            <h2 >{{insert[current].title}}</h2>
+            <h2 >{{ti[current-1]}}</h2>
             
-            <p>{{insert[current].description}}</p>
+            <p>{{de[current-1]}}</p>
           </ng-container>
                <div class="row">
-                   <div class="col-sm-6" *ngFor="let image  of  multipleimages" >
+                   <!-- <div class="col-sm-6"  >
                     <img [src]=image >
-                   </div>
+                   </div> -->
                    <!-- <div class="col-sm-6" >
                     <img src="/assets/lib2.jpg" >
                 </div>
@@ -74,10 +74,12 @@
    <div class="text-center">
     <ul class="pagination justify-content-center">
       <li class="page-item"><a class="page-link" href="#"> << </a></li>
-      <ng-container *ngIf="insert.length !=0">
+      
       <li class="page-item" *ngFor="let page of pa" (click)="execute(page)">{{page}}</li>
-    </ng-container>
+   
     <li class="page-item"><a class="page-link" href="#">>></a></li>
     </ul>
  </div>
  
+
+

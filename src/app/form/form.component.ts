@@ -13,6 +13,9 @@ export class FormComponent implements OnInit {
   description:any;
   mainimage:any;
   multipleimages:File[];
+
+  ti=[];
+  de=[];
   
   constructor() { }
 
@@ -27,15 +30,18 @@ export class FormComponent implements OnInit {
   });
 
   insert=[];
+
   onSubmit() {
     
   
     this.title=this.profileForm.controls.title.value;
     this.description=this.profileForm.controls.description.value;
     this.mainimage=this.profileForm.controls.mainimage.value;
-    // this.multipleimages=this.profileForm.controls.multipleimages.value;
+   
     this.insert.push({title : this.title ,description:this.description ,mainimage:this.mainimage} );
- 
+    
+    this.ti.push(this.title);
+    this.de.push(this.description);
     //  console.log(this.insert[0].title);
 
 
@@ -57,7 +63,9 @@ export class FormComponent implements OnInit {
  
 
 
+
 url: any;
+
 onSelectFile(event) { // called each time file input changes
     if (event.target.files && event.target.files[0]) {
 
@@ -67,29 +75,20 @@ onSelectFile(event) { // called each time file input changes
 
       reader.onload = (event) => { // called once readAsDataURL is completed
         this.url = event.target.result;
+        
+      
       }
     }
+
 }
 
 
 
 
 
-onFileChanged(event) {
-  this.multipleimages = event.target.files;
-  for (let i = 0; i < event.target.files; i++) {
-    this.multipleimages.push(event.target.files[i]);
-  }
+total:number=0;
+pa=[];
 
-
-
-  // if (event.target.files.length > 0) {
-  //   const file = event.target.files[0];
-  //   this.profileForm.get('multipleimages').setValue(file);
-  // }
-}
-total:number=0
-pa=[]
 pushTotal(){
 this.pa.push(this.total)
 }
@@ -97,4 +96,22 @@ current:number=0
 execute(num:number){
 this.current=num
 }
+
+
+
+// onFileChanged(event) {
+//   this.multipleimages = event.target.files;
+//   for (let i = 0; i < event.target.files; i++) {
+//     this.multipleimages.push(event.target.files[i]);
+//   }
+
+
+
+//   if (event.target.files.length > 0) {
+//     const file = event.target.files[0];
+//     this.profileForm.get('multipleimages').setValue(file);
+//   }
+  
+// }
+
 }
